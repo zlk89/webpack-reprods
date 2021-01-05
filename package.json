@@ -1,0 +1,16 @@
+{
+  "name": "webpack-reprods",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/zlk89/webpack-reprods.git",
+  "author": "Z",
+  "license": "MIT",
+  "scripts": {
+    "compile-nodejs": "node ./compile.js",
+    "compile-cli": "npx webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
+  }
+}
