@@ -20,12 +20,7 @@ function webpackCompiler() {
 (async function compile() {
     try {
         console.info('Run compiler');
-        const stats = await webpackCompiler();
-        const filteredWarnings = stats.warnings.filter(warning => !warning.includes('Conflicting order'));
-        if (filteredWarnings.length) {
-            console.error('Config set to fail on warning, exiting with status code "1".');
-            process.exit(1);
-        }
+        await webpackCompiler();
     } catch (e) {
         console.error('Compiler encountered an error.', e);
         process.exit(1);
