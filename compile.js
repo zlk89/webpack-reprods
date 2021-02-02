@@ -3,9 +3,7 @@ const config = require('./webpack.config');
 
 function webpackCompiler() {
     return new Promise((resolve, reject) => {
-        const compiler = webpack(config);
-
-        compiler.run((err, stats) => {
+        const compiler = webpack(config, (err, stats) => {
             const jsonStats = (stats && stats.toJson()) || {};
             console.info('Webpack compile completed.');
             if (err) {
