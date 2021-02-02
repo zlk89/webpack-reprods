@@ -6,7 +6,7 @@
   "author": "Z",
   "license": "MIT",
   "scripts": {
-    "start": "npx webpack --config webpack.config.js --mode development --watch",
+    "start": "npx webpack --config webpack.config.js --mode development --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
