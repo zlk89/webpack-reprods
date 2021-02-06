@@ -1,1 +1,3 @@
-console.log('Hello');
+import('./style.css');
+
+document.body.innerText = 'hello';
