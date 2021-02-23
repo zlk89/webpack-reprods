@@ -1,1 +1,1 @@
-console.log('Hello');
+require(`./en.json`);

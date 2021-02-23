@@ -1,17 +1,26 @@
 const path = require('path');
+const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
+    devtool: 'cheap-module-source-map',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'bundle.js'
+        filename: '[contenthash].js',
+        chunkFilename: '[contenthash].chunk.js',
+        crossOriginLoading: "anonymous",
     },
-    cache: {
-        type: 'filesystem',
-        cacheDirectory: path.resolve(__dirname, '.webpack_cache'),
+    optimization: {
+        moduleIds: 'deterministic',
+        realContentHash: true,
+        chunkIds: 'deterministic',
+        runtimeChunk: 'single',
     },
-    infrastructureLogging: {
-      debug: /webpack\.cache/
-    },
+    plugins: [
+        new SubresourceIntegrityPlugin({
+            hashFuncNames: ['sha384'],
+            enabled: true,
+        }),
+    ]
 };
