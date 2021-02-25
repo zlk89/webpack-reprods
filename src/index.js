@@ -1,1 +1,1 @@
-require(`./en.json`);
+import './style.css';
